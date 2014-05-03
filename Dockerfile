@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:13.10
 # Create User BIN
 RUN PATH=~/bin:$PATH
 # Fix: /etc/sudoers is mode 0755, should be 0440
