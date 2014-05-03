@@ -1,6 +1,5 @@
 FROM ubuntu
 # Create User BIN
-RUN mkdir ~/bin
 RUN PATH=~/bin:$PATH
 # Install REPO Tool
 RUN curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
