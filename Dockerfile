@@ -9,11 +9,14 @@ RUN sudo apt-get update -y
 RUN sudo apt-get upgrade -y
 # Install curl
 RUN sudo apt-get install -y curl
+#Update
+### couchdb developer dependencies
+RUN sudo apt-get install -y libmozjs185-dev libicu-dev libcurl4-gnutls-dev libtool
 # Install REPO Tool
 RUN curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 RUN chmod a+x ~/bin/repo
 # Install Devtools 
-RUN apt-get install -y --no-install-recommends build-essential automake libtool pkg-config check libssl-dev sqlite3 libevent-dev libglib2.0-dev libcurl4-openssl-dev erlang-nox curl erlang-dev erlang-src ruby libmozjs-dev libicu-dev libv8-dev libcloog-ppl0 libsnappy-dev
+RUN apt-get install -y --no-install-recommends build-essential automake libtool pkg-config check libssl-dev sqlite3 libevent-dev libglib2.0-dev libcurl4-openssl-dev erlang-nox curl erlang-dev erlang-src ruby libicu-dev libv8-dev libcloog-ppl0 libsnappy-dev
 # Install git
 RUN apt-get install -y --no-install-recommends git-core
 # Missing Dependency on Ubuntu not Debian!
