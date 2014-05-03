@@ -2,7 +2,11 @@ FROM ubuntu
 # Create User BIN
 RUN PATH=~/bin:$PATH
 # Fix: /etc/sudoers is mode 0755, should be 0440
-RUN chmod 0440 /etc/sudoers
+RUN chmod 0440 /etc/sudoers 
+RUN chmod 0440 /etc/sudoers.d/README
+# Update to current
+sudo apt-get update
+sudo apt-get upgrade
 # Install curl
 RUN sudo apt-get install -y curl
 # Install REPO Tool
