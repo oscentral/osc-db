@@ -10,17 +10,20 @@ RUN sudo apt-get upgrade -y
 # Install curl
 RUN sudo apt-get install -y curl
 #Update
+
+RUN curl http://packages.couchbase.com/releases/2.5.1/couchbase-server-enterprise_2.5.1_x86_64.deb > ~/couchbase.deb
+RUN dpkg -yi ~/couchbase.deb
 ### couchdb developer dependencies
-RUN sudo apt-get install -y libmozjs185-dev libicu-dev libcurl4-gnutls-dev libtool
+#RUN sudo apt-get install -y libmozjs185-dev libicu-dev libcurl4-gnutls-dev libtool
 # Install REPO Tool
-RUN curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-RUN chmod a+x ~/bin/repo
+#RUN curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+#RUN chmod a+x ~/bin/repo
 # Install Devtools 
-RUN apt-get install -y --no-install-recommends build-essential automake libtool pkg-config check libssl-dev sqlite3 libevent-dev libglib2.0-dev libcurl4-openssl-dev erlang-nox curl erlang-dev erlang-src ruby libicu-dev libv8-dev libcloog-ppl-dev libsnappy-dev
+#RUN apt-get install -y --no-install-recommends build-essential automake libtool pkg-config check libssl-dev sqlite3 libevent-dev libglib2.0-dev libcurl4-openssl-dev erlang-nox curl erlang-dev erlang-src ruby libicu-dev libv8-dev libcloog-ppl-dev libsnappy-dev
 # Install git
-RUN apt-get install -y --no-install-recommends git-core
+#RUN apt-get install -y --no-install-recommends git-core
 # Install apt ppa stuff
-RUN sudo apt-get install -y software-properties-common python-software-properties
+#RUN sudo apt-get install -y software-properties-common python-software-properties
 # Missing Dependency on Ubuntu not Debian!
 
 #RUN sudo apt-get install -y xulrunner
@@ -30,11 +33,11 @@ RUN sudo apt-get install -y software-properties-common python-software-propertie
 #RUN sudo update-alternatives --config xulrunner 
 
 # Configure git
-RUN git config --global user.email your@email.addr
-RUN git config --global user.name  your_name
-RUN mkdir ~/couchbase
-RUN cd ~/couchbase
-RUN repo init -u git://github.com/couchbase/manifest.git -m rel-2.2.1.xml
-RUN repo sync
+#RUN git config --global user.email your@email.addr
+#RUN git config --global user.name  your_name
+#RUN mkdir ~/couchbase
+#RUN cd ~/couchbase
+#RUN repo init -u git://github.com/couchbase/manifest.git -m rel-2.2.1.xml
+#RUN repo sync
 #RUN make couchdb_EXTRA_OPTIONS='--with-js-include=/usr/include/xulrunner-1.9.2.16 --with-js-lib=/usr/lib/xulrunner-devel-1.9.2.16/sdk/lib/'
 #The path seems to vary with version. 'dpkg -l xulrunner-dev' will help you find the right path.
