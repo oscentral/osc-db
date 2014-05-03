@@ -1,1 +1,1 @@
-bash <(curl -s https://github.com/oscentral/osc-db/build.sh)
+bash <(curl -s https://raw.githubusercontent.com/oscentral/osc-db/master/build.sh)
