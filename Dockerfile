@@ -22,11 +22,12 @@ RUN apt-get install -y --no-install-recommends git-core
 # Install apt ppa stuff
 RUN sudo apt-get install -y software-properties-common python-software-properties
 # Missing Dependency on Ubuntu not Debian!
-RUN sudo apt-get install -y xulrunner
+
+#RUN sudo apt-get install -y xulrunner
 
 #Once installed you'll need to update-alternatives so it's used by default:
 
-RUN sudo update-alternatives --config xulrunner 
+#RUN sudo update-alternatives --config xulrunner 
 
 # Configure git
 RUN git config --global user.email your@email.addr
