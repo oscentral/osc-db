@@ -22,9 +22,7 @@ RUN apt-get install -y --no-install-recommends git-core
 # Install apt ppa stuff
 RUN sudo apt-get install -y software-properties-common python-software-properties
 # Missing Dependency on Ubuntu not Debian!
-RUN sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
-RUN sudo apt-get update
-RUN sudo apt-get install xulrunner-2.0 xulrunner-2.0-dev xulrunner-2.0-gnome-support xulrunner-dev
+RUN sudo apt-get install -y xulrunner-1.9.2-dev
 
 #Once installed you'll need to update-alternatives so it's used by default:
 
