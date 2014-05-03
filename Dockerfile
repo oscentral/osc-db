@@ -12,6 +12,7 @@ RUN sudo apt-get install -y curl
 #Update
 
 RUN curl http://packages.couchbase.com/releases/2.5.1/couchbase-server-enterprise_2.5.1_x86_64.deb > ~/couchbase.deb
+RUN ultimit
 RUN dpkg -i ~/couchbase.deb
 ### couchdb developer dependencies
 #RUN sudo apt-get install -y libmozjs185-dev libicu-dev libcurl4-gnutls-dev libtool
