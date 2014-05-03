@@ -5,8 +5,8 @@ RUN PATH=~/bin:$PATH
 RUN chmod 0440 /etc/sudoers 
 RUN chmod 0440 /etc/sudoers.d/README
 # Update to current
-sudo apt-get update
-sudo apt-get upgrade
+RUN sudo apt-get update -y
+RUN sudo apt-get upgrade -y
 # Install curl
 RUN sudo apt-get install -y curl
 # Install REPO Tool
