@@ -19,6 +19,8 @@ RUN chmod a+x ~/bin/repo
 RUN apt-get install -y --no-install-recommends build-essential automake libtool pkg-config check libssl-dev sqlite3 libevent-dev libglib2.0-dev libcurl4-openssl-dev erlang-nox curl erlang-dev erlang-src ruby libicu-dev libv8-dev libcloog-ppl-dev libsnappy-dev
 # Install git
 RUN apt-get install -y --no-install-recommends git-core
+# Install apt ppa stuff
+RUN SUDO apt-get install -y software-properties-common python-software-properties
 # Missing Dependency on Ubuntu not Debian!
 RUN sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
 RUN sudo apt-get update
