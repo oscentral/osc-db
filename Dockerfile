@@ -20,7 +20,14 @@ RUN apt-get install -y --no-install-recommends build-essential automake libtool 
 # Install git
 RUN apt-get install -y --no-install-recommends git-core
 # Missing Dependency on Ubuntu not Debian!
-RUN apt-get install -y xulrunner-dev
+RUN sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+RUN sudo apt-get update
+RUN sudo apt-get install xulrunner-2.0 xulrunner-2.0-dev xulrunner-2.0-gnome-support xulrunner-dev
+
+#Once installed you'll need to update-alternatives so it's used by default:
+
+RUN sudo update-alternatives --config xulrunner 
+
 # Configure git
 RUN git config --global user.email your@email.addr
 RUN git config --global user.name  your_name
