@@ -1,6 +1,8 @@
 FROM ubuntu
 # Create User BIN
 RUN PATH=~/bin:$PATH
+# Install curl
+sudo apt-get install -y curl
 # Install REPO Tool
 RUN curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 RUN chmod a+x ~/bin/repo
