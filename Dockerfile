@@ -20,7 +20,7 @@ RUN apt-get install -y --no-install-recommends build-essential automake libtool 
 # Install git
 RUN apt-get install -y --no-install-recommends git-core
 # Install apt ppa stuff
-RUN SUDO apt-get install -y software-properties-common python-software-properties
+RUN sudo apt-get install -y software-properties-common python-software-properties
 # Missing Dependency on Ubuntu not Debian!
 RUN sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
 RUN sudo apt-get update
