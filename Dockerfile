@@ -13,9 +13,9 @@ RUN sudo apt-get install -y curl
 RUN curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 RUN chmod a+x ~/bin/repo
 # Install Devtools 
-RUN apt-get install -y --without-recommends build-essential automake libtool pkg-config check libssl-dev sqlite3 libevent-dev libglib2.0-dev libcurl4-openssl-dev erlang-nox curl erlang-dev erlang-src ruby libmozjs-dev libicu-dev libv8-dev libcloog-ppl0 libsnappy-dev
+RUN apt-get install -y --no-install-recommends build-essential automake libtool pkg-config check libssl-dev sqlite3 libevent-dev libglib2.0-dev libcurl4-openssl-dev erlang-nox curl erlang-dev erlang-src ruby libmozjs-dev libicu-dev libv8-dev libcloog-ppl0 libsnappy-dev
 # Install git
-RUN apt-get install -y --without-recommends git-core
+RUN apt-get install -y --no-install-recommends git-core
 # Missing Dependency on Ubuntu not Debian!
 RUN apt-get install -y xulrunner-dev
 # Configure git
